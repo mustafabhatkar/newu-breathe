@@ -13,6 +13,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   audioplayers: ^6.5.1
   flutter_bloc: ^9.1.1
+  equatable: ^2.0.7
+  flutter_svg: ^2.0.16
   google_fonts: ^8.0.1
   lottie: ^3.3.2
 
