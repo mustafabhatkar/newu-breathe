@@ -5,8 +5,15 @@ import 'theme_switch_button.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   final Widget child;
+  final bool showCloseButton;
+  final VoidCallback? onClose;
 
-  const ResponsiveLayout({super.key, required this.child});
+  const ResponsiveLayout({
+    super.key,
+    required this.child,
+    this.showCloseButton = false,
+    this.onClose,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +64,33 @@ class ResponsiveLayout extends StatelessWidget {
 
             // Theme Switch Button (positioned like app bar button)
             const Positioned(top: 52, right: 24, child: ThemeSwitchButton()),
+
+            // Close Button (optional)
+            if (showCloseButton)
+              Positioned(
+                top: 52,
+                left: 24,
+                child: GestureDetector(
+                  onTap: onClose ?? () => Navigator.pop(context),
+                  child: Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).brightness == Brightness.dark
+                          ? AppColors.darkCloseButtonBg
+                          : const Color(0xFFEFE6F0),
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Center(
+                      child: SvgPicture.asset(
+                        'assets/images/common/cancel.svg',
+                        width: 21,
+                        height: 21,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
           ],
         ),
       ),
@@ -131,7 +165,69 @@ class ResponsiveLayout extends StatelessWidget {
   }
 
   List<Widget> _buildDarkThemeBackgrounds() {
-    // TODO: Implement dark theme backgrounds
-    return [];
+    return [
+      // Bottom cloud at the bottom with 8px spacing, edges clipped
+      Positioned(
+        bottom: 102,
+
+        // More right clip
+        child: SvgPicture.asset(
+          'assets/images/dark/big_cloud.svg',
+          fit: BoxFit.cover,
+        ),
+      ),
+
+      // Med bottom cloud on top with 4px spacing
+      Positioned(
+        top: 4,
+        right: -20,
+
+        child: SvgPicture.asset(
+          'assets/images/dark/top_left_cloud.svg',
+          fit: BoxFit.contain,
+        ),
+      ),
+
+      // Colored cloud on top of med_bottom_cloud with 44px top margin
+      Positioned(
+        top: 80,
+        left: 30,
+
+        child: SvgPicture.asset(
+          'assets/images/dark/small_cloud_2.svg',
+          fit: BoxFit.contain,
+        ),
+      ),
+
+      // Cloud 1 positioned below med_bottom_cloud, right part clipped (2px)
+      Positioned(
+        top: 150, // Adjust based on med_bottom_cloud height
+        right: -40, // Clip 2px on right edge
+        child: SvgPicture.asset(
+          'assets/images/dark/cloud_2.svg',
+          fit: BoxFit.contain,
+        ),
+      ),
+
+      // Cloud 2 below cloud_1 on left side, left edge clipped, 8px spacing
+      Positioned(
+        top: 230, // Adjust based on cloud_1 position + 8px spacing
+        left: -8, // Clip left edge
+        child: SvgPicture.asset(
+          'assets/images/dark/cloud_1.svg',
+          fit: BoxFit.contain,
+        ),
+      ),
+
+      // Cloud 1 repeated below cloud_2 on right, 16px spacing
+      Positioned(
+        top: 310, // Adjust based on cloud_2 position + 16px spacing
+        right: -40, // Clip 2px on right edge
+        child: SvgPicture.asset(
+          'assets/images/dark/cloud_2.svg',
+          fit: BoxFit.contain,
+        ),
+      ),
+    ];
   }
 }

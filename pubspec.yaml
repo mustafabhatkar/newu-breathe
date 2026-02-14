@@ -28,5 +28,6 @@ flutter:
   assets:
     - assets/images/light/
     - assets/images/dark/
+    - assets/images/common/
     - assets/lottie/
     - assets/audio/

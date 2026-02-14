@@ -36,4 +36,43 @@ class AppColors {
   // Shadow Colors
   static const Color lightShadow1 = Color(0x1A000000); // #0000001A
   static const Color lightShadow2 = Color(0x1A000000); // #0000001A
+
+  // Setup Screen Specific Colors
+  static const Color primaryText = Color(0xFF141414);
+  static const Color secondaryText = Color(0xFF737373);
+  static const Color borderSubtle = Color(0xFFF5F5F5);
+  static const Color accentOrange = Color(0xFFE47B00);
+  static const Color arrowGray = Color(0xFFA3A3A3);
+  static const Color timingBorder = Color(0xFFE5E5E5);
+  static const Color timingBackground = Color(0xFFF7F7F7);
+  static const Color switchThumbColor = Color(0xFF630068);
+
+  // Breathing Exercise Colors
+  static const Color circleGradientStart = Color(
+    0x337B2D8E,
+  ); // rgba(123, 45, 142, 0.2)
+  static const Color circleGradientEnd = Color(
+    0x0D7B2D8E,
+  ); // rgba(123, 45, 142, 0.05)
+  static const Color circleBorder = Color(0x1F7B2D8E);
+  static const Color progressUnfilled = Color(0xFFEFE6F0);
+  static const Color pauseButtonBg = Color(0xFFEFE6F0);
+  static const Color pauseButtonText = Color(0xFF28002A);
+  static const Color backButtonBg = Color(0xFFF5F5F5);
+
+  // Dark Mode Chip Button Colors
+  static const Color darkChipBackground = Color(0xFF141414);
+  static const Color darkChipBorder = Color(0xFF292929);
+  static const Color darkTimingButtonBg = Color(0xFF424242);
+  static const Color darkSwitchThumbColor = Color(0xFF823386);
+
+  // Dark Mode Breathing Exercise Colors
+  static const Color darkCircleGradientStart = Color(
+    0x66C97CF5,
+  ); // rgba(201, 124, 245, 0.4)
+  static const Color darkCircleGradientEnd = Color(
+    0x1AC97CF5,
+  ); // rgba(201, 124, 245, 0.1)
+  static const Color darkCircleBorder = Color(0x40C97CF5); // #C97CF540
+  static const Color darkCloseButtonBg = Color(0xFF28002A);
 }
