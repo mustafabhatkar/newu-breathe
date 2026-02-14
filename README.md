@@ -15,7 +15,7 @@ A beautiful, minimalist breathing exercise app built with Flutter. NewU Breathe 
 - **Progress Tracking**: Visual progress indicator and cycle counter
 - **Pause/Resume**: Full control over your breathing session
 - **Light & Dark Themes**: Beautiful gradients and cloud backgrounds in both themes
-- **Responsive Design**: Works seamlessly on mobile, tablet, and web
+- **Responsive Design**: Works seamlessly on mobile and tablet *(Web optimization pending)*
 
 ## 📱 Screenshots
 
@@ -277,6 +277,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🗺️ Roadmap
 
+- [ ] **Web optimization** (responsive layout and performance)
 - [ ] Add breathing statistics and history
 - [ ] Implement user profiles and preferences
 - [ ] Add more breathing patterns (Box breathing, 4-7-8, etc.)
